@@ -1,0 +1,229 @@
+:root {
+    --bg: #fbf7f0;
+    --ink: #1c1917;
+    --ink-soft: #57534e;
+    --ink-faint: #a8a29e;
+    --accent: #7c2d12;
+    --rule: #e7e5e4;
+    --max: 680px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+}
+
+header.site {
+    padding: 24px;
+    border-bottom: 1px solid var(--rule);
+}
+
+header.site .inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+header.site a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+header.site nav a {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    margin-left: 24px;
+}
+
+header.site nav a:hover {
+    color: var(--accent);
+}
+
+h1 {
+    font-family: "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-family: "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    margin: 64px 0 16px;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 32px 0 8px;
+}
+
+p {
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+}
+
+p.lead {
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 32px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+a:hover { text-decoration-thickness: 2px; }
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    background: white;
+}
+
+.demo {
+    margin: 40px 0 48px;
+    padding: 32px;
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-family: "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink);
+}
+
+.demo .known { /* p >= 0.85: plain */ }
+
+.demo .almost {
+    border-bottom: 1px dotted var(--ink-faint);
+    padding-bottom: 1px;
+}
+
+.demo .learning {
+    color: var(--ink-faint);
+    font-style: italic;
+}
+
+.demo .new {
+    color: var(--ink-soft);
+    font-style: italic;
+}
+
+.demo .caption {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: -apple-system, system-ui, sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    line-height: 1.5;
+}
+
+ul {
+    color: var(--ink-soft);
+    padding-left: 20px;
+}
+
+ul li { margin-bottom: 6px; }
+
+.tiers {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+}
+
+.tiers li {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+}
+
+.tiers li:last-child { border-bottom: none; }
+
+.tiers .sample {
+    font-family: "Iowan Old Style", "Charter", Georgia, serif;
+    font-size: 18px;
+    min-width: 120px;
+    color: var(--ink);
+}
+
+footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+footer a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+footer a:hover { color: var(--accent); }
+
+.muted { color: var(--ink-faint); font-size: 14px; }
+
+dl.policy dt {
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 24px;
+}
+
+dl.policy dd {
+    margin: 4px 0 0;
+    color: var(--ink-soft);
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 40px; }
+    p.lead { font-size: 19px; }
+    main { padding: 40px 20px 64px; }
+    .demo { padding: 24px; font-size: 17px; }
+}
