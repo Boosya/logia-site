@@ -221,6 +221,23 @@ dl.policy dd {
     color: var(--ink-soft);
 }
 
+/* Early-access call-to-action button */
+.cta {
+    display: inline-block;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: var(--accent);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.cta:hover {
+    background: #6a260f;
+    text-decoration: none;
+}
+
 @media (max-width: 600px) {
     h1 { font-size: 40px; }
     p.lead { font-size: 19px; }
