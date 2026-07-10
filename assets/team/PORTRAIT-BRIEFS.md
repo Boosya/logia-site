@@ -39,9 +39,9 @@ Append each person's line below to that global style.
 
 | filename | name | role | subject |
 |---|---|---|---|
-| `eng-1.jpg` | Arjun Mehta | Engineer | South-Asian man, mid-30s, plain tee, focused but relaxed |
-| `eng-2.jpg` | Hana Kim | Engineer | Korean woman, early 30s, dark bob, casual, sharp |
-| `eng-3.jpg` | Diego Santos | Engineer | Latino man, 30s, hoodie, curious and laid-back |
+| `nlp.jpg` | Kenji Sato | NLP Researcher | East-Asian man, late 30s, glasses, plain tee, thoughtful and relaxed |
+| `principal-eng.jpg` | Dmitri Sokolov | Principal Engineer | Russian man, early 30s, light brown hair, casual shirt, focused |
+| `qa.jpg` | Camila Souza | QA | Brazilian woman, 30s, dark curly hair, warm and sharp, casual |
 
 ---
 
