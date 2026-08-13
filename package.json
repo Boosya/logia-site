@@ -1,0 +1,22 @@
+{
+  "name": "logia-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "logia.page — static site + the in-app submission Worker (POST /api/submit -> private R2 bucket).",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "types": "wrangler types",
+    "typecheck": "wrangler types && tsc --noEmit",
+    "check": "wrangler deploy --dry-run",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "~4.1.10",
+    "wrangler": "^4.120.1"
+  }
+}

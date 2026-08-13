@@ -1,0 +1,18 @@
+# Local-development secrets for `wrangler dev`. Copy to `.dev.vars` (gitignored)
+# and fill in. In PRODUCTION these are NOT set here — use:
+#   npx wrangler secret put SUBMIT_TOKENS
+#   npx wrangler secret put IP_HASH_SALT
+#
+# Both are REQUIRED. Without them POST /api/submit answers 503 and stores
+# nothing — the endpoint fails closed rather than accepting unauthenticated
+# writes or storing an unsalted (and therefore reversible) IP hash.
+
+# Accepted app tokens, comma-separated. The iOS app sends one of these as
+# `Authorization: Bearer <token>`. A LIST so a rotation has an overlap window:
+# add the new token, ship the app update, then drop the old one.
+SUBMIT_TOKENS="local-dev-token"
+
+# Random 32+ character string. Salts the SHA-256 of the client IP that is stored
+# as `ipHash` and used as the rate-limit key. Changing it re-anonymises every
+# future submission (old hashes stop matching new ones).
+IP_HASH_SALT="local-dev-salt-change-me-0123456789"

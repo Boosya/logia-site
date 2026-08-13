@@ -1,14 +1,51 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "logia-site",
+  "main": "src/index.ts",
   "compatibility_date": "2026-05-19",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    // The static site moved into ./public/ when the Worker gained a src/ —
+    // otherwise `assets.directory: "."` would publish src/, node_modules/ and
+    // wrangler.jsonc itself as public files.
+    "directory": "./public/",
+    "binding": "ASSETS",
+    // Only the API prefix runs the Worker. Every other request (/, /privacy,
+    // /support, /style.css) is served by Cloudflare's asset host without
+    // invoking Worker code at all.
+    "run_worker_first": ["/api/*"]
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  // PRIVATE bucket for in-app submissions — separate from the public books
+  // bucket, and it must never be made public or given a public r2.dev URL.
+  // Create it with: npx wrangler r2 bucket create logia-feedback
+  "r2_buckets": [
+    {
+      "binding": "SUBMISSIONS",
+      "bucket_name": "logia-feedback"
+    }
+  ],
+  // Per-IP-hash rate limit on the submission endpoint. 10 accepted submissions
+  // per minute is far above any human's rate and well below anything that could
+  // fill a bucket. `namespace_id` is an account-scoped identifier the founder
+  // picks; it does not need to be created in the dashboard first.
+  "ratelimits": [
+    {
+      "name": "SUBMIT_RATE_LIMIT",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
   ]
+  // SECRETS (not in this file — set with `npx wrangler secret put <NAME>`):
+  //   SUBMIT_TOKENS  comma-separated list of accepted app tokens (rotation:
+  //                  add the new one, ship the app, then drop the old one)
+  //   IP_HASH_SALT   random 32+ char string; salts the stored ipHash
+  // Both are REQUIRED: without them /api/submit answers 503 and stores nothing.
 }
