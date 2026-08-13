@@ -22,7 +22,7 @@
 
     <main class="doc">
         <h1>Privacy Policy</h1>
-        <p class="muted">Last updated: 1 July 2026</p>
+        <p class="muted">Last updated: 13 August 2026</p>
 
         <p>
             Logia is built to keep your data on your device. This policy explains exactly what is collected, what isn't, and who has access to what. If anything here is unclear, email <a href="mailto:ekaterina.gasparian@gmail.com">ekaterina.gasparian@gmail.com</a>.
@@ -39,7 +39,18 @@
             <li>The list of books you have open</li>
         </ul>
         <p>
-            None of this leaves your device. It is not synced to a Logia server (there is no Logia server). If you delete the app, this data is gone.
+            None of this leaves your device. There are no Logia accounts and no Logia server that stores your reading data — there is nowhere for it to be uploaded to.
+        </p>
+        <p>
+            If your iPhone has iCloud Backup switched on, these files are included in your device's normal encrypted Apple backup, like any other app's data. That is what lets your vocabulary and progress return if you reinstall Logia or set up a new phone. The backup is between you and Apple; we have no access to it and no way to read it. If you delete the app and have no iCloud backup, this data is gone for good.
+        </p>
+
+        <h2>Downloading books</h2>
+        <p>
+            Books are not included in the app itself — the app downloads them as you open them, from our file storage on <a href="https://www.cloudflare.com" rel="noopener">Cloudflare R2</a>. This is plain file hosting: it holds the book files and nothing about you. There is no account, no login, and nothing identifying you is attached to the request.
+        </p>
+        <p>
+            As with any download from any website, Cloudflare's servers necessarily see the request itself — your device's IP address and which file it asked for — in order to send the file back, and may log it briefly for security and abuse prevention. We don't build reading profiles from it and we don't combine it with anything else. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare's privacy policy</a>.
         </p>
 
         <h2>Anonymous usage analytics</h2>
@@ -60,7 +71,15 @@
 
         <h2>How to turn analytics off</h2>
         <p>
-            In a future version of Logia there will be an in-app "Help improve Logia" toggle that disables analytics entirely. Until then, the kill switch exists in code (events are silenced at the source) but is not yet wired to a user-facing setting. If you'd prefer not to send analytics in the meantime, email <a href="mailto:ekaterina.gasparian@gmail.com">ekaterina.gasparian@gmail.com</a> and we'll add you to the build that has it off.
+            Open <strong>Settings → Help improve Logia</strong> in the app and switch it off. Analytics are on by default; the switch is a real kill switch, not a preference we consult later. Switching it off stops every event immediately, and from the next time you open the app the analytics SDK is not started at all — so not even the session pings it would otherwise send on its own are sent.
+        </p>
+
+        <h2>Subscriptions and payment</h2>
+        <p>
+            Logia's subscription is sold through Apple's In-App Purchase system. Apple handles the entire transaction: <strong>we never see or receive your card details, billing address, or Apple Account</strong>. Apple's own privacy policy governs the payment.
+        </p>
+        <p>
+            All Logia receives is the answer to a single yes/no question, checked on your device — does this device have an active subscription? That check decides whether the full library is unlocked. There is no purchase history, no receipt, and no subscriber list held by us, and nothing about your subscription is attached to the usage analytics described above. Apple provides us with aggregate, anonymous sales reports, which cannot identify individual buyers.
         </p>
 
         <h2>Early-access sign-up (this website)</h2>
@@ -76,11 +95,14 @@
             <dt>TelemetryDeck</dt>
             <dd>Anonymous product analytics as described above. See <a href="https://telemetrydeck.com/privacy" rel="noopener">telemetrydeck.com/privacy</a>.</dd>
 
+            <dt>Cloudflare</dt>
+            <dd>Hosts this website and the book files the app downloads, as described above. See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare's privacy policy</a>.</dd>
+
             <dt>Google Forms</dt>
             <dd>Early-access sign-ups submitted on this website are collected via Google Forms / Google Sheets, as described above. See <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</dd>
 
             <dt>Project Gutenberg</dt>
-            <dd>Some of the books in Logia are public-domain texts from Project Gutenberg and its German sibling projekt-gutenberg.org; others are original works written for Logia. Either way, these sources are not contacted by the app at runtime — books ship inside the app bundle or are downloaded on request.</dd>
+            <dd>Some of the books in Logia are public-domain texts from Project Gutenberg and its German sibling projekt-gutenberg.org; others are original works written for Logia. Either way, these sources are never contacted by the app — every book is downloaded from our own file storage, as described above.</dd>
         </dl>
 
         <h2>Children</h2>
