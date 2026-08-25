@@ -22,7 +22,7 @@
 
     <main class="doc">
         <h1>Privacy Policy</h1>
-        <p class="muted">Last updated: 13 August 2026</p>
+        <p class="muted">Last updated: 25 August 2026</p>
 
         <p>
             Logia is built to keep your data on your device. This policy explains exactly what is collected, what isn't, and who has access to what. If anything here is unclear, email <a href="mailto:ekaterina@logia.page">ekaterina@logia.page</a>.
@@ -90,7 +90,22 @@
             <li>Advertising or marketing identifiers (no IDFA, no cookies)</li>
         </ul>
         <p>
-            TelemetryDeck assigns a one-way hashed identifier per app install so that repeat sessions from the same install can be counted as one user, but this identifier cannot be reversed into anything that identifies you. You can read TelemetryDeck's own privacy policy at <a href="https://telemetrydeck.com/privacy" rel="noopener">telemetrydeck.com/privacy</a>.
+            TelemetryDeck assigns a one-way hashed identifier per app install so that repeat sessions from the same install can be counted as one user, but this identifier cannot be reversed into anything that identifies you. It is derived from Apple's per-vendor device identifier, hashed with a salt on your device <em>before</em> anything is sent — the identifier itself never leaves your phone. You can read TelemetryDeck's own privacy policy at <a href="https://telemetrydeck.com/privacy" rel="noopener">telemetrydeck.com/privacy</a>.
+        </p>
+
+        <h3>Technical context sent with every event</h3>
+        <p>
+            Alongside each event above, the analytics library attaches a standard set of technical details about the device and the app. We do not choose these individually and there is no way to switch them off short of turning analytics off entirely, so they are listed here in full:
+        </p>
+        <ul>
+            <li>Device model, operating system version, processor architecture, screen size and scale, and screen orientation</li>
+            <li>Your time zone, language, region and whether you use light or dark mode</li>
+            <li>The Logia version and build number, and whether the app came from the App Store or TestFlight</li>
+            <li>Counts describing how often the app has been used — the date of the first session, the number of sessions, and how many distinct days it has been opened</li>
+            <li><strong>System accessibility display settings:</strong> reduce motion, bold text, invert colours, darker system colours, reduce transparency, differentiate without colour, and your preferred text size</li>
+        </ul>
+        <p>
+            We want to be direct about that last line, because it is the one that could matter to you. These are display preferences, not health information, and Logia does not ask about or store anything about your health or abilities. But some of them are settings a person may turn on because of a disability, and you deserve to know they are sent rather than find out later. They are never linked to you, never used to build a profile, and never shared or sold. If you would rather none of it were sent, the switch below turns off analytics completely — including everything in this list.
         </p>
 
         <h2>How to turn analytics off</h2>
@@ -133,7 +148,7 @@
 
         <h2>Changes to this policy</h2>
         <p>
-            If this policy changes in a material way, the "Last updated" date above will change and a note will appear on the app's next launch.
+            If this policy changes in a material way, the "Last updated" date above will change. This page is the authoritative version; it is worth a look if you want to know what has changed since you last read it.
         </p>
 
         <h2>Contact</h2>

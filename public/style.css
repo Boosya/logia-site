@@ -150,6 +150,9 @@ footer a:hover { color: var(--accent); }
 
 /* ---- policy pages ---- */
 main.doc { max-width: var(--prose); margin: 0 auto; padding: 56px 24px 88px; }
+/* h3 is set with no top margin globally; in a long document a sub-heading
+   needs air above it or it reads as part of the preceding paragraph. */
+main.doc h3 { margin-top: 30px; }
 dl.policy dt { font-weight: 600; color: var(--ink); margin-top: 24px; }
 dl.policy dd { margin: 4px 0 0; color: var(--ink-soft); }
 
