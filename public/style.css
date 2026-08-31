@@ -59,11 +59,15 @@ a:hover { text-decoration-thickness: 2px; }
 .cta { display: inline-block; padding: 13px 24px; font-size: 16px; font-weight: 600; color: #fff; background: var(--accent); border-radius: 8px; text-decoration: none; }
 .cta:hover { background: var(--accent-soft); text-decoration: none; }
 .cta.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-/* Placeholder for a call to action that is not live yet: reads as a button,
-   is deliberately not a link. Swap for a real <a class="cta"> at launch. */
-.cta.soon { background: transparent; color: var(--accent); border: 1px dashed var(--accent); cursor: default; }
 .cta.ghost:hover { background: rgba(124,45,18,0.06); }
 .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 8px; }
+
+/* App Store badge. Apple's identity guidelines forbid altering the artwork, so
+   it carries no filter, border, background, shadow or recolour — the hover is a
+   fade and nothing more. width:auto keeps the true 119.664:40 ratio at any height. */
+.appstore { display: inline-block; line-height: 0; text-decoration: none; border-radius: 8px; }
+.appstore img { display: block; height: 50px; width: auto; }
+.appstore:hover { opacity: 0.88; text-decoration: none; }
 
 /* ---- hero ---- */
 .hero { padding-top: 72px; padding-bottom: 40px; }
